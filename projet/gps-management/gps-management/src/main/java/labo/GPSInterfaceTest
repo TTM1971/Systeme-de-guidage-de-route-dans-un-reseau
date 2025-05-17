@@ -1,0 +1,14 @@
+package labo;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class GPSInterfaceTest {
+    @Test
+    public void testCalculerTrajet() {
+        GPS gps = new GPS();
+        gps.chargerReseauDepuisFichier("reseau.txt");
+        Trajet trajet = gps.calculerCheminOptimal("A", "Z");
+        assertNotNull(trajet);
+    }
+}
